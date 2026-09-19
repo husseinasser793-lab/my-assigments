@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameArena</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body class="bg-black text-white">
+
+    <!-- Header / Navbar Section -->
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg bg-dark py-3" data-bs-theme="dark">
+            <div class="container">
+                <a class="navbar-brand fw-bold text-success" href="#">GameArena</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#hero">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Our_latest_games">OUR GAMES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#what_we_do">What We Do</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#our_team">Our Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact_us">Contact Us</a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex">
+                        <button class="btn btn-success fw-semibold px-4" type="button">Sign In</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="py-5" id="hero">
+            <div class="container">
+                <div class="row justify-content-between align-items-center gy-4">
+                    <!-- Left Hero Content -->
+                    <div class="col-lg-5 col-md-6">
+                        <h1 class="display-5 fw-bolder lh-tight mb-3">
+                            THE ULTIMATE<br>
+                            <span class="text-success">GAMING</span><br>
+                            EXPERIENCE
+                        </h1>
+                        <p class="text-secondary mb-4">
+                            Join millions of gamers worldwide in the most competitive eSports tournaments.
+                            Experience next-level gaming with cutting-edge technology and endless possibilities.
+                        </p>
+                        <div class="d-flex gap-3">
+                            <button class="btn btn-success fw-semibold px-4 py-2">Start Your Journey</button>
+                            <button class="btn btn-outline-success text-white px-4 py-2">Watch Tournaments</button>
+                        </div>
+                    </div>
+
+                    <!-- Right Hero Image -->
+                    <div class="col-lg-6 col-md-6">
+                        <div class="hero-img-box">
+                            <img class="hero-photo" src="./imgs/hero-img.png" alt="Hero Game Character">
+                            <div class="add-on">
+                                <span class="badge-icon">🏆</span>
+                                <div>
+                                    <small class="text-secondary d-block">Active Players</small>
+                                    <strong class="text-white">2.5M+</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Games Carousel Section -->
+        <section class="py-5" id="Our_latest_games">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <span class="intro">Our Games</span>
+                    <h2 class="fw-bolder mt-1">Our Latest Games</h2>
+                </div>
+
+                <div id="gamesCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <!-- Indicators -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#gamesCarousel" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#gamesCarousel" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#gamesCarousel" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+
+                    <!-- Carousel Slides -->
+                    <div class="carousel-inner pb-5">
+                        <!-- Slide 1 -->
+                        <div class="carousel-item active">
+                            <div class="row g-3">
+                                <div class="col-4">
+                                    <div class="game-card">
+                                        <div class="badges">
+                                            <span class="badge">Adventure</span>
+                                            <span class="badge">Multiplayer</span>
+                                        </div>
+                                        <img src="./imgs/latest-games-1.png" class="img-fluid w-100"
+                                            alt="Alien Companions">
+                                        <span class="title-for-game">Alien Companions</span>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="game-card">
+                                        <div class="badges">
+                                            <span class="badge">Racing</span>
+                                            <span class="badge">Action</span>
+                                        </div>
+                                        <img src="./imgs/latest-games-2.png" class="img-fluid w-100"
+                                            alt="Neon Velocity">
+                                        <span class="title-for-game">Neon Velocity</span>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="game-card">
+                                        <div class="badges">
+                                            <span class="badge">Shooter</span>
+                                            <span class="badge">Tactical</span>
+                                        </div>
+                                        <img src="./imgs/latest-games-3.png" class="img-fluid w-100"
+                                            alt="Shadow Protocol">
+                                        <span class="title-for-game">Shadow Protocol</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="carousel-item">
+                            <div class="row g-3">
+                                <div class="col-4">
+                                    <div class="game-card">
+                                        <div class="badges">
+                                            <span class="badge">RPG</span>
+                                            <span class="badge">Open World</span>
+                                        </div>
+                                        <img src="./imgs/latest-games-4.png" class="img-fluid w-100"
+                                            alt="Mythic Odyssey">
+                                        <span class="title-for-game">Mythic Odyssey</span>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="game-card">
+                                        <div class="badges">
+                                            <span class="badge">Battle Royale</span>
+                                            <span class="badge">Survival</span>
+                                        </div>
+                                        <img src="./imgs/latest-games-5.png" class="img-fluid w-100" alt="Apex Arena">
+                                        <span class="title-for-game">Apex Arena</span>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="game-card">
+                                        <div class="badges">
+                                            <span class="badge">Fighting</span>
+                                            <span class="badge">Combat</span>
+                                        </div>
+                                        <img src="./imgs/latest-games-6.png" class="img-fluid w-100" alt="Cyber Strike">
+                                        <span class="title-for-game">Cyber Strike</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="carousel-item">
+                            <div class="row g-3">
+                                <div class="col-4">
+                                    <div class="game-card">
+                                        <div class="badges">
+                                            <span class="badge">Sci-Fi</span>
+                                            <span class="badge">Horror</span>
+                                        </div>
+                                        <img src="./imgs/latest-games-7.png" class="img-fluid w-100"
+                                            alt="Dark Frontier">
+                                        <span class="title-for-game">Dark Frontier</span>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="game-card">
+                                        <div class="badges">
+                                            <span class="badge">Strategy</span>
+                                            <span class="badge">Warfare</span>
+                                        </div>
+                                        <img src="./imgs/latest-games-8.png" class="img-fluid w-100" alt="Eternal War">
+                                        <span class="title-for-game">Eternal War</span>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="game-card">
+                                        <div class="badges">
+                                            <span class="badge">Arcade</span>
+                                            <span class="badge">Simulation</span>
+                                        </div>
+                                        <img src="./imgs/latest-games-9.png" class="img-fluid w-100"
+                                            alt="Galactic Fleet">
+                                        <span class="title-for-game">Galactic Fleet</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#gamesCarousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#gamesCarousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <br>
+        <br>
+        <!-- Interactive Course -->
+        <section id="what_we_do">
+            <div class="text-center">
+                <span class="text-light lines">WHAT WE DO</span>
+                <h2> <span class="fw-bold">More Than Just Games</span>
+                    <br>
+                    We Build <span class="text-success">Interactive</span> Journeys
+                </h2>
+                <br>
+                <div class="container">
+                    <div class="row g-3">
+                        <div class="col-3">
+                            <div class="border-hover d-flex justify-content-center align-items-center">
+                                <span class="fw-bold">PC Game Development</span>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="border-hover d-flex justify-content-center align-items-center">
+                                <span class="fw-bold">Mobile Game Development</span>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="border-hover">
+                                <img src="./imgs/what-we-do-1.png" alt="What We Do 1">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="border-hover d-flex justify-content-center align-items-center">
+                                <span class="fw-bold">AR/VR Solutions</span>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="border-hover d-flex justify-content-center align-items-center">
+                                <span class="fw-bold">AR/VR Design</span>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="border-hover">
+                                <img src="./imgs/what-we-do-2.png" alt="What We Do 2">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="border-hover d-flex justify-content-center align-items-center">
+                                <span class="fw-bold">PS4 Game Development</span>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="border-hover d-flex justify-content-center align-items-center">
+                                <span class="fw-bold">3D Modelings</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="d-flex justify-content-center align-items-center mt-4">
+                    <div class="line-1"></div>
+                </div>
+                <div class="overflow-hidden w-100 py-3 marquee-container">
+                    <div class="marquee-track d-flex w-max">
+                        <!-- First Logo Set
+                        <div class="marquee-group d-flex align-items-center gap-4 pe-4">
+                            <img src="./imgs/logo-1.jpg" class="img-fluid" alt="">
+                            <img src="./imgs/logo-2.jpg" class="img-fluid" alt="">
+                            <img src="./imgs/logo-3.jpg" class="img-fluid" alt="">
+                            <img src="./imgs/logo-4.jpg" class="img-fluid" alt="">
+                        </div> -->
+                        <!-- Seamlessly Endless loop -->
+                        <div class="marquee-group d-flex align-items-center gap-4 pe-4" aria-hidden="true">
+                            <img src="./imgs/logo-1.jpg" class="img-fluid" alt="">
+                            <img src="./imgs/logo-2.jpg" class="img-fluid" alt="">
+                            <img src="./imgs/logo-3.jpg" class="img-fluid" alt="">
+
+                            <img src="./imgs/logo-4.jpg" class="img-fluid" alt="">
+                            <img src="./imgs/logo-5.jpg" class="img-fluid" alt="">
+                            <img src="./imgs/logo-6.jpg" class="img-fluid" alt="">
+
+                        </div>
+                        <br>
+                        <div class="marquee-group d-flex align-items-center gap-4 pe-4" aria-hidden="true">
+                            <img src="./imgs/logo-7.jpg" class="img-fluid" alt="">
+                            <img src="./imgs/logo-8.jpg" class="img-fluid" alt="">
+                            <img src="./imgs/logo-9.jpg" class="img-fluid" alt="">
+                            <img src="./imgs/logo-10.jpg" class="img-fluid" alt="">
+                            <img src="./imgs/logo-11.jpg" class="img-fluid" alt="">
+                            <img src="./imgs/logo-12.jpg" class="img-fluid" alt="">
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <br>
+        <br>
+        <!-- Our Team -->
+        <section class="py-5" id="our_team">
+            <div class="container">
+                <div class="row g-3">
+                    <!-- Member 1 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card-1 rounded-3 d-flex flex-column justify-content-end p-3 text-start">
+                            <img src="./imgs/avatar-1.png" alt="Alex Phantom Chen" class="card-bg">
+                            <div class="card-text position-relative z-2">
+                                <h4 class="fw-bold mb-1">Alex "Phantom" <br> Chen</h4>
+                                <span class="text-success fw-semibold d-block">Pro Player - VALORANT</span>
+                                <span class="badge bg-secondary mt-1">World Champion 2023</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Member 2 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card-1 rounded-3 d-flex flex-column justify-content-end p-3 text-start">
+                            <img src="./imgs/avatar-2.png" alt="Liam Vortex Miller" class="card-bg">
+                            <div class="card-text position-relative z-2">
+                                <h4 class="fw-bold mb-1">Liam "Vortex" <br> Miller</h4>
+                                <span class="text-success fw-semibold d-block">Pro Player - CS2</span>
+                                <span class="badge bg-secondary mt-1">Major MVP 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Member 3 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card-1 rounded-3 d-flex flex-column justify-content-end p-3 text-start">
+                            <img src="./imgs/avatar-3.png" alt="Marcus Viper Vance" class="card-bg">
+                            <div class="card-text position-relative z-2">
+                                <h4 class="fw-bold mb-1">Marcus "Viper" <br> Vance</h4>
+                                <span class="text-success fw-semibold d-block">Head Coach & Analyst</span>
+                                <span class="badge bg-secondary mt-1">5x Regional Champion</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Member 4 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card-1 rounded-3 d-flex flex-column justify-content-end p-3 text-start">
+                            <img src="./imgs/avatar-4.png" alt="Ethan Shadow Drake" class="card-bg">
+                            <div class="card-text position-relative z-2">
+                                <h4 class="fw-bold mb-1">Ethan "Shadow" <br> Drake</h4>
+                                <span class="text-success fw-semibold d-block">Lead Game Engine Dev</span>
+                                <span class="badge bg-secondary mt-1">Unreal Tech Fellow</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Member 5 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card-1 rounded-3 d-flex flex-column justify-content-end p-3 text-start">
+                            <img src="./imgs/avatar-5.png" alt="David Apex Kim" class="card-bg">
+                            <div class="card-text position-relative z-2">
+                                <h4 class="fw-bold mb-1">David "Apex" <br> Kim</h4>
+                                <span class="text-success fw-semibold d-block">Pro Player - LoL</span>
+                                <span class="badge bg-secondary mt-1">Worlds Finalist 2023</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Member 6 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card-1 rounded-3 d-flex flex-column justify-content-end p-3 text-start">
+                            <img src="./imgs/avatar-6.png" alt="Ryan Ghost Cooper" class="card-bg">
+                            <div class="card-text position-relative z-2">
+                                <h4 class="fw-bold mb-1">Ryan "Ghost" <br> Cooper</h4>
+                                <span class="text-success fw-semibold d-block">Senior 3D Animator</span>
+                                <span class="badge bg-secondary mt-1">Game of the Year 2022</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Member 7 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card-1 rounded-3 d-flex flex-column justify-content-end p-3 text-start">
+                            <img src="./imgs/avatar-7.png" alt="Lucas Blaze Silva" class="card-bg">
+                            <div class="card-text position-relative z-2">
+                                <h4 class="fw-bold mb-1">Lucas "Blaze" <br> Silva</h4>
+                                <span class="text-success fw-semibold d-block">Pro Player - Apex</span>
+                                <span class="badge bg-secondary mt-1">Kill Record Holder</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Member 8 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card-1 rounded-3 d-flex flex-column justify-content-end p-3 text-start">
+                            <img src="./imgs/avatar-8.png" alt="Nathan Spectre Hayes" class="card-bg">
+                            <div class="card-text position-relative z-2">
+                                <h4 class="fw-bold mb-1">Nathan "Spectre" <br> Hayes</h4>
+                                <span class="text-success fw-semibold d-block">Esports Tournament Lead</span>
+                                <span class="badge bg-secondary mt-1">Organizer of the Year</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="py-4 text-start text-secondary border-top border-dark" id="contact_us">
+        <div class="container">
+            <div class="justify-content-center">
+                <span class="intro">CONTACT US</span>
+                <br>
+                <strong class="fs-1">Get In Touch</strong>
+                <br>
+                <span class="fw-light">Have questions or need support? We're here to help!</span>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="d-flex ">
+                <div>
+                    <div
+                        class="text-center mb-2 justify-content-center text-black align-items-center w-50 bg-info-subtle p-3 rounded-3">
+                        <h3>Our Location</h3>
+                        <span>123 Gaming Street, Esports City, EC 12345
+
+                        </span>
+                    </div>
+                    <div
+                        class="text-center mb-2 justify-content-center text-black align-items-center w-50 bg-info-subtle p-3 rounded-3">
+                        <h3>Phone Number</h3>
+                        <span>
+                            +1 (555) 123-4567
+
+                        </span>
+                    </div>
+                    <div
+                        class="text-center mb-2 justify-content-center text-black align-items-center w-50 bg-info-subtle p-3 rounded-3">
+                        <h3>Email Address</h3>
+                        <span>
+                            contact@gamearena.com
+
+                        </span>
+                    </div>
+                    <div
+                        class="text-center justify-content-center text-black align-items-center w-50 bg-success-subtle p-3 rounded-3">
+                        <h3>Join Our Community</h3>
+                        <span>
+                            Connect with us on social media for the latest updates
+                        </span>
+
+                    </div>
+                </div>
+                <div class="w-50 bg-danger-subtle rounded-3 text-black p-2">
+                    <form>
+                        <div class="container m-auto width-1">
+                            <h3 class="fw-bold mb-1">Send us a Message</h3>
+                            <div class="container">
+                                <div class="row g-2">
+                                    <div class="col-6">
+                                        <label for="user_first_name" class="form-label">First Name</label>
+                                        <input type="text" id="user_first_name" class="form-control">
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="user_last_name" class="form-label">Last Name</label>
+                                        <input type="text" id="user_last_name" class="form-control">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="user_email_address" class="form-label">Email Address</label>
+                                        <input type="email" id="user_email_address" class="form-control">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="user_subject" class="form-label">Subject</label>
+                                        <select name="user_subject" id="user_subject" class="form-select">
+                                            <option>General Inquiry</option>
+                                            <option>Tournament Support</option>
+                                            <option>Technical Issue</option>
+                                            <option>Partnership</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="user_message" class="form-label">Message</label>
+                                        <textarea name="user_message" id="user_message" class="form-control"
+                                            rows="4"></textarea>
+                                    </div>
+                                    <div class="col-12 d-flex gap-2">
+                                        <input type="checkbox" id="user_check_mark" class="form-check">
+                                        <label for="user_check_mark" id="user_check_mark"> Subscribe to our newsletter
+                                            for gaming updates</label>
+
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-outline-success btn-danger text-light w-100 ">Send
+                                            Message ⬅️</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="container mt-5 pt-4 bg-dark rounded-3 p-2">
+                <div class="row g-2  text-light">
+                    <div class="col-3">
+                        <h4 class="text-success"> GameArena</h4>
+                        <br>
+                        <p>The ultimate destination for competitive gaming, esports tournaments, and gaming community.
+                        </p>
+                    </div>
+                    <div class="col-3 justify-content-center align-items-center">
+                        <h4 class="fw-bold">Quick Links</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="#hero" class="footer-link">Home</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#Our_latest_games" class="footer-link">Our Games</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#what_we_do" class="footer-link">What We Do</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#our_team" class="footer-link">Our Team</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#contact_us" class="footer-link">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-3 justify-content-center align-items-center">
+                        <h4 class="fw-bold">Games</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="#Our_latest_games" class="footer-link">VALORANT</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#Our_latest_games" class="footer-link">League of Legends</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#Our_latest_games" class="footer-link">CS:GO</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#Our_latest_games" class="footer-link">Dota 2</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#Our_latest_games" class="footer-link">Apex Legends</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-3 justify-content-center align-items-center">
+                        <h4 class="fw-bold">Support</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="#contact_us" class="footer-link">Contact Us</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#contact_us" class="footer-link">Help Center</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#contact_us" class="footer-link">Bug Reports</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#what_we_do" class="footer-link">Feature Requests</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#our_team" class="footer-link">Our Champions</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+    <br>
+      <p class="mb-0">&copy; 2026 GameArena. All rights reserved.</p>
+            </div>
+          
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

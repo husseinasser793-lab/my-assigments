@@ -1,0 +1,356 @@
+/* ==========================================================================
+   1. Global Settings & Resets
+   ========================================================================== */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #0b0c10;
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   2. Navbar Styling
+   ========================================================================== */
+.navbar-nav .nav-link {
+    color: #ccc;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* All links turn green on hover */
+.navbar-nav .nav-link:hover {
+    color: #198754 !important;
+}
+
+/* Keep the active page (Home) white when hovered */
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.active:hover {
+    color: #fff !important;
+}
+
+/* ==========================================================================
+   3. Hero Section
+   ========================================================================== */
+.hero-img-box {
+    position: relative;
+    width: 100%;
+}
+
+.hero-photo {
+    width: 100%;
+    border-radius: 12px;
+    border: 4px solid #198754;
+    display: block;
+    object-fit: cover;
+}
+
+/* Floating "Active Players" Badge */
+.add-on {
+    position: absolute;
+    bottom: -15px;
+    left: -15px;
+    background-color: #16181e;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.badge-icon {
+    font-size: 1.5rem;
+}
+
+/* ==========================================================================
+   4. Section Titles ("Our Games")
+   ========================================================================== */
+.intro {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #198754;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.intro::before,
+.intro::after {
+    content: "";
+    width: 24px;
+    height: 2px;
+    background-color: #198754;
+    display: inline-block;
+}
+.width-1{
+    width: 90%;
+}
+/* ==========================================================================
+   5. Carousel & Game Cards
+   ========================================================================== */
+.carousel-item {
+    transition: transform 0.6s ease-in-out;
+}
+
+.game-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #16181e;
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.game-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.game-card:hover {
+    transform: translateY(-4px);
+}
+
+.lines {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    /* Spacing between the text and the lines */
+}
+
+.border-hover {
+    height: 200px;
+    border: 3px solid transparent;
+    border-radius: 10px;
+
+    background-color: rgba(240, 255, 255, 0.532);
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.border-hover img {
+    width: 100%;
+}
+
+.w-max {
+    width: max-content;
+}
+
+.marquee-track {
+    animation: marquee-scroll 20s linear infinite;
+}
+
+@keyframes marquee-scroll {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateX(-50%)
+    }
+}
+
+.card-1 {
+    position: relative;
+    overflow: hidden;
+    filter: grayscale(100%);
+    transition: 0.3s ease;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    height: 320px;
+}
+
+.card-bg {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-1 .card-text {
+    position: relative;
+    z-index: 2;
+}
+
+.card-1:hover {
+    filter: grayscale(0%);
+}
+
+.line-1 {
+    width: 50%;
+    height: 4px;
+    background-color: #4ade80;
+}
+
+.border-hover:hover {
+    background-color: #4ade80;
+    border-color: #4ade80;
+}
+
+.border-hover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.lines::after,
+.lines::before {
+    content: "";
+    width: 20px;
+    height: 2px;
+    display: inline-block;
+    background-color: #fc330b;
+}
+
+.game-card:hover img {
+    transform: scale(1.05);
+}
+
+/* 10px light green inset shadow from all sides on hover */
+.game-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 0 10px 3px #4ade80;
+    border: 1px solid rgba(74, 222, 128, 0.65);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+    z-index: 4;
+}
+
+.game-card:hover::after {
+    opacity: 1;
+}
+
+/* Badges: hidden (opacity: 0) by default, smoothly appear on hover */
+.badges {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    z-index: 3;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.badges .badge {
+    background-color: rgba(11, 12, 16, 0.75) !important;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 6px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 5px 10px;
+    letter-spacing: 0.4px;
+}
+
+/* Game Title: hidden (opacity: 0) by default, smoothly appear on hover */
+.title-for-game {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 28px 14px 12px;
+    background: linear-gradient(to top, rgba(11, 12, 16, 0.9) 0%, rgba(11, 12, 16, 0) 100%);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+    z-index: 3;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* Hover trigger for badges & titles */
+.game-card:hover .badges,
+.game-card:hover .title-for-game {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Prominent circular controls & indicators */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 44px;
+    height: 44px;
+    background-color: #198754;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.85;
+    transition: all 0.3s ease;
+}
+
+.carousel-control-prev {
+    left: -20px;
+}
+
+.carousel-control-next {
+    right: -20px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: #157347;
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: #198754;
+    height: 4px;
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   Footer Links
+   ========================================================================== */
+.footer-link {
+    color: #adb5bd; /* subtle text color */
+    text-decoration: none;
+    transition: color 0.25s ease;
+    display: inline-block;
+}
+
+.footer-link:hover {
+    color: #198754 !important; /* turns text-success on hover */
+}
