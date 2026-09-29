@@ -1,0 +1,417 @@
+/* ==========================================================================
+   Base Styles & Variables
+   ========================================================================== */
+:root {
+    --primary-color: #0d6efd;
+    --primary-hover: #0b5ed7;
+    --dark-color: #172033;
+    --text-muted: #6c757d;
+    --nav-height: 76px;
+    --transition: all 0.3s ease;
+    --gradient-start: #0d6efd;
+    --gradient-end: #6610f2;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--nav-height);
+    overflow-x: clip;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: #fcfcfd;
+    overflow-x: clip;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==========================================================================
+   Navbar Styling
+   ========================================================================== */
+.custom-navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    padding: 1rem 0;
+}
+
+/* Brand Logo */
+.custom-navbar .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.custom-navbar .navbar-brand:hover {
+    color: var(--primary-color);
+}
+
+.custom-navbar .navbar-brand i {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+/* Nav Links */
+.custom-navbar .nav-item {
+    position: relative;
+    margin: 0 0.35rem;
+}
+
+.custom-navbar .nav-link {
+    color: #4b5563;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+    transition: var(--transition);
+    position: relative;
+}
+
+/* Hover & Active States */
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+    color: var(--primary-color);
+}
+.translate-10{
+    transition: 0.3s;
+    width: auto;
+    height: auto;
+    padding: 5px;
+    background-color: #3a1fa8;
+    color: #f0f4ff;
+    border-radius: 10px;
+    border: black 2px solid;
+}
+.translate-10:hover{
+    transform: translateY(-5px);
+}
+
+/* Smooth Animated Underline */
+.custom-navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0.75rem;
+    right: 0.75rem;
+    height: 2px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+    border-radius: 2px;
+}
+
+.custom-navbar .nav-link:hover::after,
+.custom-navbar .nav-link.active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Navbar CTA Button */
+.custom-navbar .btn-nav {
+    font-weight: 600;
+    padding: 0.55rem 1.4rem;
+    border-radius: 50px;
+    transition: var(--transition);
+}
+
+.custom-navbar .btn-nav:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.25);
+}
+
+/* Mobile Toggler */
+.custom-navbar .navbar-toggler {
+    border: 1px solid #e5e7eb;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+}
+
+.custom-navbar .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+/* Mobile Responsive Adjustments (under 992px) */
+@media (max-width: 991.98px) {
+    .custom-navbar .navbar-collapse {
+        background-color: #ffffff;
+        padding: 1.25rem 1rem;
+        margin-top: 0.75rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .custom-navbar .nav-item {
+        margin: 0.25rem 0;
+    }
+
+    .custom-navbar .nav-link {
+        padding: 0.6rem 1rem;
+        border-radius: 8px;
+    }
+
+    .custom-navbar .nav-link:hover,
+    .custom-navbar .nav-link.active {
+        background-color: rgba(13, 110, 253, 0.08);
+    }
+
+    .custom-navbar .nav-link::after {
+        display: none;
+    }
+
+    .custom-navbar .btn-nav {
+        margin-top: 0.75rem;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero-section {
+    background: linear-gradient(160deg, #f0f4ff 0%, #ffffff 60%);
+    padding: 5rem 1rem 3rem;
+}
+
+.hero-eyebrow {
+    display: inline-block;
+    background-color: rgba(13, 110, 253, 0.08);
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    border: 1px solid rgba(13, 110, 253, 0.2);
+    margin-bottom: 1.25rem;
+}
+
+.hero-title {
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.search-card {
+    max-width: 900px;
+}
+
+/* Stats Row */
+.stat-number {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+}
+
+.stat-label {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.stat-divider {
+    width: 1px;
+    height: 40px;
+    background-color: #e5e7eb;
+}
+
+/* ==========================================================================
+   Section Decorative Labels (opening / client-stories badges)
+   ========================================================================== */
+.opening {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 0.85rem !important;
+}
+
+.opening::before,
+.opening::after {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.client-stories {
+    background-color: rgba(102, 16, 242, 0.15);
+    color: #6610f2;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.85rem !important;
+}
+
+.client-stories::before {
+    content: "";
+    background: linear-gradient(to right, #6610f2, rgba(102, 16, 242, 0.1));
+    width: 35px;
+    height: 3px;
+    display: inline-block;
+}
+
+.client-stories::after {
+    content: "";
+    background: linear-gradient(to left, #6610f2, rgba(102, 16, 242, 0.1));
+    width: 35px;
+    height: 3px;
+    display: inline-block;
+}
+
+/* Gradient Text */
+.gradient {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ==========================================================================
+   Property Cards
+   ========================================================================== */
+.property-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.property-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1) !important;
+}
+
+.property-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.property-card:hover .property-img {
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   Testimonials Section
+   ========================================================================== */
+.testimonials-section {
+    background: linear-gradient(135deg, #1a1250 0%, #3a1fa8 100%);
+}
+
+.testimonial-inner {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    min-height: 280px;
+}
+
+/* ==========================================================================
+   FAQ Accordion
+   ========================================================================== */
+.accordion-button:not(.collapsed) {
+    background-color: rgba(13, 110, 253, 0.05);
+    color: var(--primary-color);
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+/* ==========================================================================
+   Contact Cards
+   ========================================================================== */
+.contact-card {
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(13, 110, 253, 0.1);
+    border-color: var(--primary-color);
+}
+
+.contact-icon {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(13, 110, 253, 0.08);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    transition: background-color 0.3s ease;
+}
+
+.contact-card:hover .contact-icon {
+    background-color: rgba(13, 110, 253, 0.15);
+}
+
+/* ==========================================================================
+   Services — Commercial Badge Overlay
+   ========================================================================== */
+.out-of-place {
+    bottom: -10px;
+    left: -10px;
+}
+
+/* ==========================================================================
+   Utility Links
+   ========================================================================== */
+.links {
+    position: relative;
+    padding-bottom: 3px;
+    display: inline-block;
+    transition: 0.3s ease;
+}
+
+.links:hover {
+    color: var(--primary-color);
+}
+
+.links::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.links:hover::after {
+    opacity: 1;
+}
