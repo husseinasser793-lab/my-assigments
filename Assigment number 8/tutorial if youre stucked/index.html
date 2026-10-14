@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What's For Dinner - Tutorial Reference</title>
+
+  <!-- 1. Google Fonts: Poppins for clean modern typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- 2. Font Awesome 6 Icons for food, stars, clocks, etc. -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- 3. Bootstrap 5 CSS (Can use CDN or local ../CSS/bootstrap.min.css) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+  <!-- 4. Custom CSS for warm gradient, glassmorphism card, and pill tabs -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <!-- ========================================================
+       SECTION 1: HEADER & NAVIGATION
+       Purpose: Top bar with brand logo, title, and action icons.
+       Key Bootstrap classes:
+       - sticky-top: keeps header on top while scrolling
+       - d-flex / justify-content-between: aligns logo left, icons right
+       - collapse / d-md-none: mobile hamburger drawer
+       ======================================================== -->
+  <header class="bg-white border-bottom border-warning-subtle shadow-sm sticky-top">
+    <div class="container py-3">
+      <div class="d-flex align-items-center justify-content-between">
+
+        <!-- Logo & App Title -->
+        <div class="d-flex align-items-center gap-3">
+          <div class="brand-logo-circle d-flex align-items-center justify-content-center shadow-sm">
+            <i class="fa-solid fa-utensils text-white fs-5"></i>
+          </div>
+          <div>
+            <h1 class="h5 fw-bold mb-0 text-dark">What's For Dinner</h1>
+            <p class="text-muted small mb-0">Your daily meal inspiration</p>
+          </div>
+        </div>
+
+        <!-- Desktop Action Buttons (Visible only on medium screens and up: d-none d-md-flex) -->
+        <div class="d-none d-md-flex align-items-center gap-3">
+          <button class="btn btn-light rounded-circle icon-circle-btn text-secondary" title="Saved Recipes">
+            <i class="fa-solid fa-bookmark"></i>
+          </button>
+          <button class="btn btn-light rounded-circle icon-circle-btn text-secondary" title="Recent History">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+          </button>
+          <button class="btn btn-light rounded-circle icon-circle-btn text-secondary" title="Settings">
+            <i class="fa-solid fa-gear"></i>
+          </button>
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
+               alt="User Profile" class="profile-avatar border border-2 border-warning shadow-sm">
+        </div>
+
+        <!-- Mobile Menu Hamburger Button (Visible only on mobile: d-md-none) -->
+        <button class="btn btn-outline-warning d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenuNav">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div class="collapse d-md-none pt-3" id="mobileMenuNav">
+        <div class="d-flex flex-column gap-2 border-top pt-2">
+          <a href="#" class="btn btn-light text-start"><i class="fa-solid fa-bookmark me-2 text-warning"></i> Saved Recipes</a>
+          <a href="#" class="btn btn-light text-start"><i class="fa-solid fa-clock-rotate-left me-2 text-warning"></i> Recent Recipes</a>
+          <a href="#" class="btn btn-light text-start"><i class="fa-solid fa-gear me-2 text-warning"></i> Settings</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================
+       SECTION 2: MAIN RECIPE CARD
+       Grid architecture:
+       - row g-0 inside a card with rounded corners (border-radius: 28px)
+       - col-lg-5: Left column (food photo + overlays)
+       - col-lg-7: Right column (recipe details + tabs + buttons)
+       ======================================================== -->
+  <main class="container py-4 py-lg-5">
+    <div class="card main-recipe-card border-0 shadow-lg overflow-hidden">
+      <div class="row g-0">
+
+        <!-- ========================================================
+             LEFT COLUMN: IMAGE & FLOATING OVERLAYS (col-lg-5)
+             ======================================================== -->
+        <div class="col-lg-5 position-relative recipe-media-wrapper">
+          <!-- Main Food Image: Dynamic source replaced by JS -->
+          <img id="recipeImage" src="" alt="Recipe Image" class="w-100 h-100 object-fit-cover">
+
+          <!-- 1. Floating Rating Pill (Top-Left) -->
+          <div class="position-absolute top-0 start-0 m-3 m-md-4 bg-white rounded-pill px-3 py-2 shadow-sm d-flex align-items-center gap-2">
+            <i class="fa-solid fa-star text-warning"></i>
+            <span class="fw-bold text-dark small" id="ratingAverage">4.8</span>
+            <span class="text-muted small" id="ratingQuantity">(234 reviews)</span>
+          </div>
+
+          <!-- 2. Floating Frosted Glass Quick Info (Bottom) -->
+          <div class="position-absolute bottom-0 start-0 end-0 m-3 m-md-4 glass-quick-info rounded-4 p-3 shadow">
+            <div class="row text-center g-0">
+              <div class="col-4 border-end">
+                <i class="fa-solid fa-clock text-warning fs-5 mb-1"></i>
+                <div class="text-muted extra-small">Prep Time</div>
+                <div class="fw-bold text-dark small" id="prepTimeDisplay">15 min</div>
+              </div>
+              <div class="col-4 border-end">
+                <i class="fa-solid fa-fire-burner text-danger fs-5 mb-1"></i>
+                <div class="text-muted extra-small">Cook Time</div>
+                <div class="fw-bold text-dark small" id="cookTimeDisplay">20 min</div>
+              </div>
+              <div class="col-4">
+                <i class="fa-solid fa-users text-primary fs-5 mb-1"></i>
+                <div class="text-muted extra-small">Servings</div>
+                <div class="fw-bold text-dark small" id="servingsDisplay">4 people</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========================================================
+             RIGHT COLUMN: DETAILS, TABS & ACTIONS (col-lg-7)
+             ======================================================== -->
+        <div class="col-lg-7 p-4 p-md-5 d-flex flex-column justify-content-between bg-white">
+          <div>
+            <!-- Header Badges & Bookmark/Share -->
+            <div class="d-flex align-items-start justify-content-between mb-3">
+              <div class="d-flex gap-2">
+                <span class="badge bg-success-subtle text-success rounded-pill px-3 py-2 fw-semibold" id="difficultyBadge">Easy</span>
+                <span class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2 fw-semibold" id="categoryBadge">Italian</span>
+              </div>
+              <div class="d-flex gap-2">
+                <button class="btn btn-warning-subtle text-warning-emphasis rounded-3 px-3 py-2" title="Bookmark">
+                  <i class="fa-solid fa-bookmark"></i>
+                </button>
+                <button class="btn btn-warning-subtle text-warning-emphasis rounded-3 px-3 py-2" title="Share">
+                  <i class="fa-solid fa-share-nodes"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Recipe Heading & Description -->
+            <h2 class="h2 fw-bold text-dark mb-2" id="recipeName">Creamy Spaghetti Carbonara</h2>
+            <p class="text-secondary mb-4" id="recipeDescription">A classic Italian pasta dish with eggs, cheese, and pancetta</p>
+
+            <!-- Dynamic Alert for Long Preparation Time (Shown if totalTime > 45) -->
+            <div id="timeWarningAlert" class="alert alert-danger d-flex align-items-center gap-3 rounded-3 d-none mb-4" role="alert">
+              <i class="fa-solid fa-triangle-exclamation fs-4"></i>
+              <div>
+                <div class="fw-bold">Extended Preparation Time</div>
+                <div class="small">This recipe takes more than 45 minutes to prepare. Plan accordingly!</div>
+              </div>
+            </div>
+
+            <!-- ========================================================
+                 TABS: Ingredients, Instructions, Nutrition, Chef Tips
+                 Using Bootstrap 5 nav-pills with data-bs-toggle="pill"
+                 ======================================================== -->
+            <ul class="nav nav-pills custom-recipe-tabs gap-2 border-bottom pb-3 mb-3" id="recipeTabsList" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="tab-btn-ingredients" data-bs-toggle="pill" data-bs-target="#tab-ingredients" type="button" role="tab">
+                  <i class="fa-solid fa-list-check me-1"></i> Ingredients
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tab-btn-instructions" data-bs-toggle="pill" data-bs-target="#tab-instructions" type="button" role="tab">
+                  <i class="fa-solid fa-book-open me-1"></i> Instructions
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tab-btn-nutrition" data-bs-toggle="pill" data-bs-target="#tab-nutrition" type="button" role="tab">
+                  <i class="fa-solid fa-chart-pie me-1"></i> Nutrition
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tab-btn-tips" data-bs-toggle="pill" data-bs-target="#tab-tips" type="button" role="tab">
+                  <i class="fa-solid fa-lightbulb me-1"></i> Chef's Tips
+                </button>
+              </li>
+            </ul>
+
+            <!-- Tab Panels Content Container -->
+            <div class="tab-content recipe-tab-scroll pe-2" id="recipeTabsContent">
+
+              <!-- 1. Ingredients Tab Panel -->
+              <div class="tab-pane fade show active" id="tab-ingredients" role="tabpanel">
+                <div class="p-3 rounded-4 warm-ingredients-box">
+                  <ul class="list-unstyled mb-0 d-flex flex-column gap-2" id="ingredientsListContainer"></ul>
+                </div>
+              </div>
+
+              <!-- 2. Instructions Tab Panel -->
+              <div class="tab-pane fade" id="tab-instructions" role="tabpanel">
+                <div class="d-flex flex-column gap-3" id="instructionsListContainer"></div>
+              </div>
+
+              <!-- 3. Nutrition Tab Panel -->
+              <div class="tab-pane fade" id="tab-nutrition" role="tabpanel">
+                <div class="row g-3" id="nutritionCardsContainer"></div>
+              </div>
+
+              <!-- 4. Chef's Tips Tab Panel -->
+              <div class="tab-pane fade" id="tab-tips" role="tabpanel">
+                <div class="d-flex flex-column gap-3" id="tipsListContainer"></div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Bottom Action: Try Another Recipe Button -->
+          <div class="pt-4 mt-4 border-top">
+            <button id="tryAnotherRecipeBtn" class="btn btn-gradient-dinner px-4 py-3 rounded-3 text-white fw-bold shadow">
+              <i class="fa-solid fa-rotate me-2"></i>Try Another Recipe
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========================================================
+       SCRIPTS:
+       1. Bootstrap Bundle JS (includes Popper for tabs & collapses)
+       2. Custom Script (Data array & DOM rendering logic)
+       ======================================================== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./script.js"></script>
+
+</body>
+</html>

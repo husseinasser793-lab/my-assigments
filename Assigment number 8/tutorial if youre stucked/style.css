@@ -1,0 +1,157 @@
+/* ========================================================
+   WHAT'S FOR DINNER - STYLING GUIDE & REFERENCE
+   ======================================================== */
+
+/* 1. Global Page Background & Typography */
+body {
+  font-family: 'Poppins', sans-serif;
+  /* Warm gradient background matching the original design */
+  background: linear-gradient(135deg, #fff7ed 0%, #fef3c7 50%, #fffbeb 100%);
+  min-height: 100vh;
+}
+
+/* 2. Header Brand Logo Icon */
+.brand-logo-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f97316 0%, #ef4444 100%);
+}
+
+.profile-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+
+.icon-circle-btn {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.icon-circle-btn:hover {
+  background-color: #ffedd5;
+  color: #ea580c;
+}
+
+/* 3. Main Recipe Card Styling */
+.main-recipe-card {
+  border-radius: 28px;
+}
+
+/* Responsive Image Heights */
+.recipe-media-wrapper {
+  min-height: 380px;
+}
+
+@media (min-width: 992px) {
+  .recipe-media-wrapper {
+    min-height: 720px;
+  }
+}
+
+/* 4. Glassmorphism Floating Quick Info Card */
+.glass-quick-info {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.extra-small {
+  font-size: 0.75rem;
+}
+
+/* 5. Custom Tab Navigation Pills */
+.custom-recipe-tabs .nav-link {
+  color: #64748b;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.custom-recipe-tabs .nav-link:hover {
+  color: #ea580c;
+  background-color: #fff7ed;
+}
+
+/* Active tab state */
+.custom-recipe-tabs .nav-link.active {
+  background-color: #ffedd5 !important;
+  color: #ea580c !important;
+}
+
+/* Scrollable container for tab contents */
+.recipe-tab-scroll {
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+/* Warm container for ingredients */
+.warm-ingredients-box {
+  background: linear-gradient(135deg, #fff7ed 0%, #fef3c7 100%);
+  border: 1px solid #fed7aa;
+}
+
+/* Numbered badges for steps & ingredients */
+.step-number-pill {
+  width: 28px;
+  height: 28px;
+  background-color: #f97316;
+  color: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+/* Instruction step big badge */
+.instruction-step-badge {
+  width: 42px;
+  height: 42px;
+  background-color: #f97316;
+  color: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* 6. Try Another Recipe Button Gradient */
+.btn-gradient-dinner {
+  background: linear-gradient(90deg, #f97316 0%, #ef4444 100%);
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-gradient-dinner:hover {
+  background: linear-gradient(90deg, #ea580c 0%, #dc2626 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3) !important;
+  color: #ffffff;
+}
+
+/* Nutrition metric card hover */
+.nutrition-card {
+  background-color: #f8fafc;
+  border: 1px solid #f1f5f9;
+  border-radius: 12px;
+  transition: background-color 0.2s ease;
+}
+
+.nutrition-card:hover {
+  background-color: #f1f5f9;
+}

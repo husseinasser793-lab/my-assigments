@@ -1,0 +1,81 @@
+.icon {
+background-color: #ea580c;
+}
+.icon-img-color{
+    border-color: #ea580c;
+}
+.nav-item img{
+width: 40px;
+height: 40px;
+}
+/* .nav-item:hover i {
+color: #ea580c;
+} */
+.sp-color{
+    background-color: rgba(235, 202, 96, 0.872);
+}   
+.sp-margin{
+    margin: auto;
+    width: 95%;
+}
+.special-img{
+      transform: scale(1.25); /* Adjust zoom: 1.1 = 10% zoom, 1.25 = 25% zoom, 1.5 = 50% zoom */
+    transform-origin: center center;
+}
+.pstion{
+    position: absolute;
+    top: 15px;
+    left: 20px;
+}
+.orng{
+    background-color:#eaa00cb5;
+    color: #ea820c;
+
+}
+  .orng-bg-subtle{
+      background-color:#eabe0c;
+  }
+  .orng-bg{
+      background-color:#ea8a0ceb;
+  }
+.orng-text{
+     color: #ea820c;
+}
+.fw-text-hover{
+    font-weight: lighter;
+    transition: font-weight 0.2s ease;
+}
+.fw-text-hover:hover{
+    font-weight: 400;
+}
+.line{
+    position: relative;
+}
+.line::after,
+.line::before{
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95px;
+    height: 2px;
+    background-color: #ea820c;
+}
+
+/* Custom tabs styling */
+.nav-tabs .nav-link {
+    color: #4b5563;
+}
+.nav-tabs .nav-link:hover {
+    color: #ea580c;
+}
+.nav-tabs .nav-link.active {
+    color: #ea580c !important;
+    font-weight: 600;
+}
+
+.size{
+    width: 99%;
+    margin-left: 1%;
+}
